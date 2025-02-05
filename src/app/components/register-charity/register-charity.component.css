@@ -1,0 +1,11 @@
+.register-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.charity-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

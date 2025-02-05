@@ -1,0 +1,14 @@
+<div class="admin-dashboard">
+    <h2>Admin Dashboard - Verify Charities</h2>
+    <mat-list>
+        <mat-list-item *ngFor="let charity of unverifiedCharities">
+            <div class="charity-info">
+                <h3>{{ charity.name }}</h3>
+                <p>{{ charity.description }}</p>
+            </div>
+            <button mat-raised-button color="accent" (click)="verifyCharity(charity.wallet)">
+                Verify
+            </button>
+        </mat-list-item>
+    </mat-list>
+</div>

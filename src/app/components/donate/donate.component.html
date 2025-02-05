@@ -1,1 +1,54 @@
-<p>donate works!</p>
+<div class="donate-container">
+    <h2>Make a Donation</h2>
+
+    <mat-form-field>
+        <mat-label>Select Payment Method</mat-label>
+        <mat-select [(ngModel)]="selectedMethod">
+            <mat-option *ngFor="let method of paymentMethods" [value]="method.value">
+                {{ method.label }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div *ngIf="selectedMethod === 'crypto'">
+        <h3>Donate with Crypto</h3>
+        <mat-form-field>
+            <mat-label>Amount (ETH)</mat-label>
+            <input matInput type="number" [(ngModel)]="cryptoAmount" />
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="donateCrypto()">Donate with Crypto</button>
+    </div>
+
+    <div *ngIf="selectedMethod === 'upi'">
+        <h3>Donate via UPI</h3>
+        <img [src]="upiQR" alt="UPI QR Code" class="qr-code" />
+        <p>UPI ID: {{ upiID }}</p>
+    </div>
+
+    <div *ngIf="selectedMethod === 'card'">
+        <h3>Donate with Card</h3>
+        <form (submit)="payWithCard()">
+            <mat-form-field>
+                <mat-label>Card Number</mat-label>
+                <input matInput type="text" required />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Expiry Date</mat-label>
+                <input matInput type="month" required />
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>CVV</mat-label>
+                <input matInput type="password" required />
+            </mat-form-field>
+            <button mat-raised-button color="accent" type="submit">Pay Now</button>
+        </form>
+    </div>
+
+    <div *ngIf="selectedMethod === 'bank'">
+        <h3>Donate via Bank Transfer</h3>
+        <p><strong>Account Name:</strong> Charity Foundation</p>
+        <p><strong>Bank Name:</strong> XYZ Bank</p>
+        <p><strong>Account No:</strong> 1234567890</p>
+        <p><strong>IFSC Code:</strong> XYZB0001234</p>
+    </div>
+</div>

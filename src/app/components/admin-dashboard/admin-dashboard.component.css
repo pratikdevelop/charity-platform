@@ -1,0 +1,9 @@
+.admin-dashboard {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.charity-info {
+  flex-grow: 1;
+}

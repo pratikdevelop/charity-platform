@@ -1,0 +1,10 @@
+<div class="charity-list">
+    <h2>Verified Charities</h2>
+    <mat-card *ngFor="let charity of charities" class="charity-card">
+        <mat-card-title>{{ charity.name }}</mat-card-title>
+        <mat-card-content>
+            <p>{{ charity.description }}</p>
+            <p><strong>Address:</strong> {{ charity.wallet }}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

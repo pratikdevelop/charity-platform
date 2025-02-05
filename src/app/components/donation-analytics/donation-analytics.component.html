@@ -1,0 +1,13 @@
+<div class="donation-analytics">
+    <h2>Donation Analytics</h2>
+
+    <canvas id="donationChart"></canvas>
+
+    <mat-card *ngFor="let charity of charityStats">
+        <mat-card-title>{{ charity.name }}</mat-card-title>
+        <mat-card-content>
+            <p><strong>Total Donations:</strong> {{ charity.total }} ETH</p>
+            <p><strong>Number of Donations:</strong> {{ charity.count }}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

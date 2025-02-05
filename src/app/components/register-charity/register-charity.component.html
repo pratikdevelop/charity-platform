@@ -1,0 +1,73 @@
+<div class="register-container">
+    <h2>Register Your Charity</h2>
+    <form (submit)="registerCharity()" [formGroup]="charityForm" class="charity-form">
+        <mat-form-field>
+            <mat-label>Charity Name</mat-label>
+            <input matInput formControlName="name" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description" required></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Wallet Address</mat-label>
+            <input matInput formControlName="wallet" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Registration Number</mat-label>
+            <input matInput formControlName="regNumber" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Website</mat-label>
+            <input matInput formControlName="website" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Contact Email</mat-label>
+            <input matInput formControlName="contactEmail" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Contact Phone</mat-label>
+            <input matInput formControlName="contactPhone" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Bank Account</mat-label>
+            <input matInput formControlName="bankAccount" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>IFSC Code</mat-label>
+            <input matInput formControlName="ifscCode" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Categories (comma separated)</mat-label>
+            <input matInput formControlName="categories" required />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Twitter</mat-label>
+            <input matInput formControlName="twitter" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Facebook</mat-label>
+            <input matInput formControlName="facebook" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Instagram</mat-label>
+            <input matInput formControlName="instagram" />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="isSubmitting">Register</button>
+    </form>
+
+    <p *ngIf="message">{{ message }}</p>
+</div>
